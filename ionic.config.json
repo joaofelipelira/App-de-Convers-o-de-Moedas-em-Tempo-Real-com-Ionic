@@ -1,0 +1,7 @@
+{
+  "name": "app-conversor-moedas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
