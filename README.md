@@ -67,3 +67,7 @@ O projeto utiliza a [ExchangeRate-API.com](https://www.exchangerate-api.com/).
     ng cache clean --force
     ```
 
+
+https://github.com/user-attachments/assets/d98cb5ae-db30-431e-a195-13c3b11273af
+
+
