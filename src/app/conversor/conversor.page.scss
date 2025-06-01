@@ -1,0 +1,192 @@
+ion-content {
+  --background: var(--ion-color-light);
+}
+
+ion-card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background: var(--ion-background-color, #fff);
+}
+
+.conversion-card {
+  padding: 15px;
+}
+
+.currency-input-block {
+  margin-bottom: 20px;
+  position: relative; /* Necessário para posicionar o spinner */
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .input-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    color: var(--ion-color-dark);
+  }
+}
+
+.currency-selector-item {
+  --background: var(--ion-item-background, var(--ion-color-light-shade));
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  ion-label {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--ion-color-dark);
+    .currency-code {
+      margin-right: 8px;
+    }
+    .currency-name {
+      color: var(--ion-color-medium);
+      font-weight: normal;
+      font-size: 0.9em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 150px;
+    }
+  }
+
+  .transparent-select {
+    --padding-start: 0;
+    --padding-end: 0;
+    opacity: 0; /* Torna o select transparente */
+    width: 100%; /* Ocupa toda a largura do slot */
+    height: 100%; /* Ocupa toda a altura do item */
+    position: absolute; /* Permite que fique sobre a label */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Garante que ele seja clicável */
+    cursor: pointer; /* Indica que é clicável */
+  }
+}
+
+.currency-flag-large {
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 10px;
+  border: 1px solid var(--ion-color-medium, #ccc);
+  border-radius: 3px;
+}
+
+.currency-spinner {
+  position: absolute;
+  right: 15px;
+  top: 50px; /* Ajuste conforme a altura do seu label e item */
+  z-index: 2; /* Acima do select transparente */
+  color: var(--ion-color-primary);
+}
+
+
+.amount-input,
+.converted-amount-display {
+  --background: var(--ion-color-light-shade);
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+  font-size: 2.2em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+  color: var(--ion-color-dark);
+}
+
+.converted-amount-display {
+  color: var(--ion-color-secondary);
+}
+
+.amount-input::part(placeholder) {
+  color: var(--ion-color-medium);
+  opacity: 0.5;
+}
+
+.swap-button {
+  --padding-start: 0;
+  --padding-end: 0;
+  --color: var(--ion-color-medium);
+  ion-icon {
+    font-size: 2.5em;
+    color: var(--ion-color-primary);
+  }
+  margin: 15px auto;
+  display: block;
+}
+
+ion-card.result-card {
+  border-left: 6px solid var(--ion-color-primary);
+  margin-top: 25px;
+  background: var(--ion-background-color, #fff);
+
+  ion-card-header {
+    padding-bottom: 0;
+  }
+
+  ion-card-title {
+    color: var(--ion-color-primary);
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+
+  ion-card-content {
+    padding-top: 10px;
+    .conversion-result {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: var(--ion-color-dark);
+
+      .converted-value {
+        color: var(--ion-color-secondary);
+      }
+    }
+
+    .exchange-rate {
+      font-size: 0.95em;
+      color: var(--ion-color-medium);
+      margin-top: 5px;
+    }
+  }
+}
+
+ion-button.ion-margin-top {
+  --background: #3da35d;
+  --background-activated: #369051;
+  --color: #ffffff;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  --border-radius: 8px;
+  font-weight: bold;
+  height: 50px;
+}
+
+.currency-flag {
+  width: 24px; // Tamanho menor para as bandeiras DENTRO do popover
+  height: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+  border: 1px solid var(--ion-color-medium, #ccc);
+  border-radius: 2px;
+}
+
+.conversion-flag {
+  width: 28px;
+  height: auto;
+  vertical-align: middle;
+  margin: 0 5px;
+  border: 1px solid var(--ion-color-medium, #ccc);
+  border-radius: 2px;
+}
+
+ion-select-option {
+  display: flex;
+  align-items: center;
+}

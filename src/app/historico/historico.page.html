@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Histórico de Conversões</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="clearHistory()" *ngIf="conversions.length > 0">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="conversions.length > 0; else noHistory">
+    <ion-item *ngFor="let conversion of conversions">
+      <ion-label>
+        <h2>
+          <ion-img [src]="getFlagUrl(conversion.from)" class="history-flag"></ion-img>
+          {{ conversion.amount | number:'1.2-2' }} {{ conversion.from }} =
+        </h2>
+        <h2>
+          <ion-img [src]="getFlagUrl(conversion.to)" class="history-flag"></ion-img>
+          {{ conversion.convertedAmount | number:'1.2-2' }} {{ conversion.to }}
+        </h2>
+        <p>Taxa: {{ conversion.rate | number:'1.4-4' }}</p>
+        <p>Data: {{ conversion.timestamp | date:'short' }}</p>
+        <ion-text color="medium" *ngIf="conversion.isOffline">
+          <p>(Offline)</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noHistory>
+    <ion-grid class="ion-text-center ion-margin-top">
+      <ion-row>
+        <ion-col>
+          <ion-icon name="hourglass-outline" size="large" color="medium"></ion-icon>
+          <p class="ion-text-color-medium">Nenhum histórico de conversão ainda.</p>
+          <p class="ion-text-color-medium">Comece a converter para ver o histórico aqui!</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-template>
+</ion-content>
+
+<style>
+  /* Adicione este CSS ao seu historico.page.scss para as bandeiras */
+  .history-flag {
+    width: 20px; /* ou o tamanho que preferir */
+    height: 20px; /* ou o tamanho que preferir */
+    vertical-align: middle;
+    margin-right: 8px;
+    border: 1px solid #eee; /* Opcional: borda para as bandeiras */
+  }
+</style>
