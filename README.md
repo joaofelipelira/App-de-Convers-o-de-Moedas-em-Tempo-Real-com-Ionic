@@ -39,10 +39,9 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 O projeto utiliza a [ExchangeRate-API.com](https://www.exchangerate-api.com/).
 
-1.  Crie uma conta gratuita em [https://www.exchangerate-api.com/](https://www.exchangerate-api.com/).
-2.  Obtenha sua **Chave de API (API Key)**.
-3.  Abra o arquivo `src/app/services/currency.service.ts`.
-4.  Substitua `'CHAVE_API'` pela chave de API:
+1.  Obtenha sua **Chave de API (API Key)**.
+2.  Abra o arquivo `src/app/services/currency.service.ts`.
+3.  Substitua `'CHAVE_API'` pela chave de API:
     ```typescript
     private apiKey = 'CHAVE_API'; // Substitua por sua chave - Linha 12
     ```
